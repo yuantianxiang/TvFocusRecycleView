@@ -89,7 +89,6 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
             public void onFocusChange(View view, boolean b) {
                 if (b) {
                     if (rvFocusChangeListener != null) {
-                        Log.e("fuckyou", "fuckyou baby1");
                         if (record_position() && null != oldTopView) {
                             new Handler().post(new Runnable() {
                                 @Override
