@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.studyproject.yuantianxiang.tvlistgridview.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ytx.tvlibrary.base.DoctorRecycleView
+            android:id="@+id/recycle_list"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="57dp"
+            android:descendantFocusability="beforeDescendants"
+            app:column="1"
+            app:nextFocusRight="@+id/recycle_grid"
+            app:oldView="yes"
+            app:type="list_v" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/recycle_list"
+            android:layout_marginLeft="33dp"
+            android:padding="40px"
+            android:orientation="vertical">
+            <com.ytx.tvlibrary.base.DoctorRecycleView
+                android:id="@+id/recycle_listH"
+                android:descendantFocusability="beforeDescendants"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                app:nextFocusLeft="@+id/recycle_list"
+                app:nextFocusDown="@+id/recycle_grid"
+                app:oldView="yes"
+                app:type="list_h"/>
+            <com.ytx.tvlibrary.base.DoctorRecycleView
+                android:id="@+id/recycle_grid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:descendantFocusability="beforeDescendants"
+                app:column="3"
+                app:nextFocusLeft="@+id/recycle_list"
+                app:nextFocusUp="@+id/recycle_listH"
+                app:type="list_grid" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
